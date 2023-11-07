@@ -12,8 +12,8 @@ const tools = new Toolpackage("My great toolbox extension")
 function epxLocalizedTxt(input) {
     var result = {}
     attributes()
-        .filter(attr => attr.startsWith(searchAttr))
-        .forEach(attr => {result[attr.replace(searchAttr+" " , "")] = source(attr)})
+        .filter(attr => attr.startsWith(input))
+        .forEach(attr => {result[attr.replace(input+" " , "")] = source(attr)})
     return result
 }
 tools.add({

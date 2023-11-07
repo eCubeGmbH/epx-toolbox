@@ -31,5 +31,28 @@ tools.add({
     }
 })
 
+function epxLocalizedTxt(input) {
+    var result = {}
+    attributes()
+        .filter(attr => attr.startsWith(searchAttr))
+        .forEach(attr => {result[attr.replace(searchAttr+" " , "")] = source(attr)})
+    return result
+}
+tools.add({
+    id: "epxLocalizedTxt",
+    impl: epxLocalizedTxt,
+    aliases: {
+        en: "epxLocalizedTxt",
+        de: "epxLocalizedTxt"
+    },
+    args: {
+        en: "input1",
+        de: "eingabe1"
+    },
+    tags: ["test"],
+    tests: () => {
+    }
+})
+
 //-------------WRITE YOUR FUNCTIONS ABOVE THIS LINE------------------
 tools.exportAll(exports)

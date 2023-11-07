@@ -45,7 +45,7 @@ tools.add({
             }
         ]
     },
-    tags: ["epx"],
+    tags: ["Emporix"],
     tests: () => {
     }
 })

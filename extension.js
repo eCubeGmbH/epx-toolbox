@@ -9,28 +9,6 @@ const base = require('chioro-toolbox/toolbase')
 
 const tools = new Toolpackage("My great toolbox extension")
 
-
-function niceFunction(input1, input2) {
-    return base.upperCaseText(input1) + " " + base.lowerCaseText(input2);
-}
-tools.add({
-    id: "niceFunction",
-    impl: niceFunction,
-    aliases: {
-        en: "niceFunction",
-        de: "netteFunktion"
-    },
-    args: {
-        en: "input1, input2",
-        de: "eingabe1, eingabe2"
-    },
-    tags: ["test"],
-    tests: () => {
-        tools.expect(niceFunction("hello", "world")).toBe('HELLO world');
-        tools.expect(niceFunction("Helping", "World")).toBe('HELPING world');
-    }
-})
-
 function epxLocalizedTxt(input) {
     var result = {}
     attributes()
@@ -45,11 +23,29 @@ tools.add({
         en: "epxLocalizedTxt",
         de: "epxLocalizedTxt"
     },
-    args: {
-        en: "input1",
-        de: "eingabe1"
+    argsOld: {
+        en: "input",
+        de: "input"
     },
-    tags: ["test"],
+    args: {
+        en : [
+            {
+                "key" : "input",
+                "label": "Value",
+                "type": "text",
+                "desc": "The attribute starts with this text (text to search)"
+            }
+        ],
+        de : [
+            {
+                "key" : "input",
+                "label": "Wert",
+                "type": "text",
+                "desc": "Mit diesem Text startet das Attribut (Suchtext)"
+            }
+        ]
+    },
+    tags: ["epx"],
     tests: () => {
     }
 })

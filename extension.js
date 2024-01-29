@@ -27,24 +27,16 @@ tools.add({
         en: "input",
         de: "input"
     },
-    args: {
-        en : [
-            {
-                "key" : "input",
-                "label": "Value",
-                "type": "text",
-                "desc": "The attribute starts with this text (text to search)"
-            }
-        ],
-        de : [
-            {
-                "key" : "input",
-                "label": "Wert",
-                "type": "text",
-                "desc": "Mit diesem Text startet das Attribut (Suchtext)"
-            }
-        ]
-    },
+    args: [
+        {
+            "key": "input",
+            "label_en": "Value",
+            "label_de": "Wert",
+            "type": "text",
+            "desc_en": "The attribute starts with this text (text to search)",
+            "desc_de": "Mit diesem Text startet das Attribut (Suchtext)"
+        }
+    ],
     tags: ["Emporix"],
     tests: () => {
     }
